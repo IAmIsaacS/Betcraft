@@ -1,0 +1,187 @@
+---
+import Image from "astro/components/Image.astro";
+import img from "../assets/header/1.jpg"
+import img2 from "../assets/header/2.jpg"
+import img3 from "../assets/header/3.jpg"
+import img4 from "../assets/header/4.jpg"
+import img5 from "../assets/header/5.png"
+import img6 from "../assets/header/6.jpg"
+---
+<header id="inicio" class="relative h-screen w-full overflow-hidden">
+  <!-- Contenedor del Slider -->
+  <div id="slider" class="h-full w-full relative">
+    <!-- Slide 1 -->
+    <div class="absolute inset-0 w-full h-full slide active">
+      <!-- Contenedor de imagen con overlay -->
+      <div class="absolute inset-0">
+        <Image src={img} alt="Persona con gorra blanca personalizada mediante sublimación, con un logotipo estilizado en negro al centro, sosteniendo una hamburguesa." class="w-full h-full object-cover" />
+        <div class="absolute inset-0 radial-gradient-overlay"></div>
+      </div>
+      <!-- Contenedor de texto (sin z-index) -->
+      <div class="absolute inset-0 flex items-end justify-center md:justify-start pb-8 md:pb-12 px-4 md:pl-8">
+        <div class="max-w-2xl w-full text-center md:text-left">
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white animate-fade-in">IMAGINA SIN LIMITES,</h1>
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white animate-fade-in-delay">CREA SIN FRONTERAS.</h1>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 2 -->
+    <div class="absolute inset-0 w-full h-full slide">
+      <div class="absolute inset-0">
+        <Image src={img2} alt="Taza colgante con logotipo de Betcraft." class="w-full h-full object-cover" />
+        <div class="absolute inset-0 radial-gradient-overlay"></div>
+      </div>
+      <div class="absolute inset-0 flex items-end justify-center md:justify-start pb-8 md:pb-12 px-4 md:pl-8">
+        <div class="max-w-2xl w-full text-center md:text-left">
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">DISEÑA TU MUNDO,</h1>
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">UN SORBO A LA VEZ.</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="absolute inset-0 w-full h-full slide">
+      <div class="absolute inset-0">
+        <Image src={img3} alt="Vaso blanco de cartón sublimado con un logotipo dorado al frente, colocado sobre una superficie clara y fondo neutro." class="w-full h-full object-cover" />
+        <div class="absolute inset-0 radial-gradient-overlay"></div>
+      </div>
+      <div class="absolute inset-0 flex items-end justify-center md:justify-start pb-8 md:pb-12 px-4 md:pl-8">
+        <div class="max-w-2xl w-full text-center md:text-left">
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">EL ARTE DE TRANSFORMAR</h1>
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">LO COTIDIANO A LO EXTRAORDINARIO</h1>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 4 -->
+    <div class="absolute inset-0 w-full h-full slide">
+      <div class="absolute inset-0">
+        <Image src={img4} alt="Chico de espaldas con camisa beige estampada con logo de Betcraft." class="w-full h-full object-cover" />
+        <div class="absolute inset-0 radial-gradient-overlay"></div>
+      </div>
+      <div class="absolute inset-0 flex items-end justify-center md:justify-start pb-8 md:pb-12 px-4 md:pl-8">
+        <div class="max-w-2xl w-full text-center md:text-left">
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">CUANDO EL DISEÑO HABLA,</h1>
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">LA SIMPLICIDAD SE CONVIERTE EN PASION.</h1>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 5 -->
+    <div class="absolute inset-0 w-full h-full slide">
+      <div class="absolute inset-0">
+        <Image src={img5} alt="Mujer subiendo escalera con tote bag negra personalizada con logotipo y texto blanco." class="w-full h-full object-cover" />
+        <div class="absolute inset-0 radial-gradient-overlay"></div>
+      </div>
+      <div class="absolute inset-0 flex items-end justify-center md:justify-start pb-8 md:pb-12 px-4 md:pl-8">
+        <div class="max-w-2xl w-full text-center md:text-left">
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">LLEVA TUS IDEAS</h1>
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">A NUEVAS ALTURAS CON ESTILO.</h1>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 6 -->
+    <div class="absolute inset-0 w-full h-full slide">
+      <div class="absolute inset-0">
+        <Image src={img6} alt="Chico de espaldas con gorra y sudadera negra con logo de Betcraft estampado." class="w-full h-full object-cover" />
+        <div class="absolute inset-0 radial-gradient-overlay"></div>
+      </div>
+      <div class="absolute inset-0 flex items-end justify-center md:justify-start pb-8 md:pb-12 px-4 md:pl-8">
+        <div class="max-w-2xl w-full text-center md:text-left">
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">LA CREATIVIDAD</h1>
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white">SE VISTE DE CONFIANZA Y ACTITUD.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  import gsap from "gsap";
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    const slideDuration = 5000; // 5 segundos por slide
+    
+    // Animación de entrada para el texto del primer slide
+    gsap.from('.animate-fade-in', {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: 'power2.out'
+    });
+    
+    gsap.from('.animate-fade-in-delay', {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      delay: 0.3,
+      ease: 'power2.out'
+    });
+
+    function nextSlide() {
+      const currentActive = slides[currentSlide];
+      currentSlide = (currentSlide + 1) % totalSlides;
+      const nextActive = slides[currentSlide];
+      
+      // Animación de salida
+      gsap.to(currentActive, {
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          currentActive.classList.remove('active');
+        }
+      });
+      
+      // Animación de entrada
+      nextActive.classList.add('active');
+      gsap.fromTo(nextActive, 
+        { opacity: 0 }, 
+        {
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.inOut'
+        }
+      );
+      
+      // Animación para el texto del nuevo slide
+      const titles = nextActive.querySelectorAll('h1');
+      
+      gsap.fromTo(titles, 
+        { opacity: 0, y: 20 }, 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power2.out'
+        }
+      );
+    }
+    
+    // Cambio automático de slides
+    setInterval(nextSlide, slideDuration);
+  });
+</script>
+
+<style>
+  .slide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .radial-gradient-overlay {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    pointer-events: none;
+  }
+</style>

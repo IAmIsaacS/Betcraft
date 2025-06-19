@@ -1,0 +1,258 @@
+<section id="faq" class="w-[90%] md:w-[60%] mx-auto py-24 md:py-32 border-t border-gray-200">
+  <h2 class="text-xl md:text-2xl font-semibold uppercase tracking-wide mb-12 text-center text-gray-800">
+    Preguntas Frecuentes
+  </h2>
+  
+  <div class="space-y-4" id="accordion">
+    <!-- Item 1 -->
+    <div class="border border-black overflow-hidden">
+      <button
+        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
+        aria-expanded="false"
+      >
+        ¿Tienes un diseño listo para usar?
+        <svg
+          class="w-5 h-5 transition-transform duration-300 accordion-icon"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
+        role="region"
+      >
+        ¡Perfecto! transformamos tus ideas en productos únicos y de alta calidad. Si ya cuentas con un diseño propio, solo tienes que enviárnoslo y nosotros nos encargamos del resto.
+      </div>
+    </div>
+    
+    <!-- Item 2 -->
+    <div class="border border-black overflow-hidden">
+      <button
+        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
+        aria-expanded="false"
+      >
+        ¿Ofrecen garantía en sus productos?
+        <svg
+          class="w-5 h-5 transition-transform duration-300 accordion-icon"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
+        role="region"
+      >
+        Sí, ofrecemos garantía de satisfacción por 30 días en todos nuestros productos.
+      </div>
+    </div>
+    
+    <!-- Item 3 -->
+    <div class="border border-black overflow-hidden">
+      <button
+        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
+        aria-expanded="false"
+      >
+        ¿Puedo personalizar mi pedido?
+        <svg
+          class="w-5 h-5 transition-transform duration-300 accordion-icon"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
+        role="region"
+      >
+        Claro, ofrecemos opciones de personalización de nuestros productos. Contáctanos para más detalles.
+      </div>
+    </div>
+    
+    <!-- Item 4 -->
+    <div class="border border-black overflow-hidden">
+      <button
+        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
+        aria-expanded="false"
+      >
+        ¿Cuáles son los métodos de pago disponibles?
+        <svg
+          class="w-5 h-5 transition-transform duration-300 accordion-icon"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
+        role="region"
+      >
+        Aceptamos Pago movíl, Efectivo, PayPal y transferencias bancarias.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+import { gsap } from 'gsap';
+
+class Accordion {
+  private accordionItems: NodeListOf<HTMLElement>;
+  private buttons: NodeListOf<HTMLButtonElement>;
+  private contents: NodeListOf<HTMLElement>;
+  private icons: NodeListOf<SVGElement>;
+
+  constructor() {
+    this.accordionItems = document.querySelectorAll('#accordion > div');
+    this.buttons = document.querySelectorAll('.accordion-button');
+    this.contents = document.querySelectorAll('.accordion-content');
+    this.icons = document.querySelectorAll('.accordion-icon');
+
+    this.init();
+  }
+
+  private init(): void {
+    // Inicializar: ocultar todos los contenidos
+    this.contents.forEach((content) => {
+      gsap.set(content, { 
+        height: 0,
+        opacity: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+        marginTop: 0,
+        marginBottom: 0
+      });
+    });
+
+    // Añadir event listeners
+    this.buttons.forEach((button, index) => {
+      button.addEventListener('click', () => this.toggleItem(index));
+    });
+  }
+
+  private toggleItem(index: number): void {
+    const isExpanded = this.buttons[index].getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+      this.closeItem(index);
+    } else {
+      this.openItem(index);
+      // Cerrar otros items abiertos
+      this.closeOtherItems(index);
+    }
+  }
+
+  private openItem(index: number): void {
+    const button = this.buttons[index];
+    const content = this.contents[index];
+    const icon = this.icons[index];
+    
+    // Aplicar estilo activo
+    button.classList.add('is-active');
+    button.classList.remove('hover:bg-black', 'hover:text-white');
+    button.classList.add('bg-black', 'text-white');
+
+    // Mostrar el contenido antes de la animación para calcular height
+    gsap.set(content, {
+      height: 'auto',
+      opacity: 1,
+      paddingTop: '1rem',
+      paddingBottom: '1rem',
+      marginTop: 0,
+      marginBottom: 0
+    });
+    
+    gsap.from(content, {
+      height: 0,
+      opacity: 0,
+      paddingTop: 0,
+      paddingBottom: 0,
+      duration: 0.3,
+      ease: 'power2.inOut'
+    });
+
+    // Animación del icono
+    gsap.to(icon, {
+      rotation: 180,
+      duration: 0.3,
+      ease: 'power2.inOut'
+    });
+
+    button.setAttribute('aria-expanded', 'true');
+  }
+
+  private closeItem(index: number): void {
+    const button = this.buttons[index];
+    const content = this.contents[index];
+    const icon = this.icons[index];
+    
+    // Quitar estilo activo
+    button.classList.remove('is-active', 'bg-black', 'text-white');
+    button.classList.add('hover:bg-black', 'hover:text-white');
+    
+    gsap.to(content, {
+      height: 0,
+      opacity: 0,
+      paddingTop: 0,
+      paddingBottom: 0,
+      duration: 0.3,
+      ease: 'power2.inOut'
+    });
+
+    // Animación del icono
+    gsap.to(icon, {
+      rotation: 0,
+      duration: 0.3,
+      ease: 'power2.inOut'
+    });
+
+    button.setAttribute('aria-expanded', 'false');
+  }
+
+  private closeOtherItems(openIndex: number): void {
+    this.contents.forEach((content, index) => {
+      if (index !== openIndex && this.buttons[index].getAttribute('aria-expanded') === 'true') {
+        this.closeItem(index);
+      }
+    });
+  }
+}
+
+// Inicializar el acordeón cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  new Accordion();
+});
+</script>
+
+<style>
+  .accordion-icon {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+  
+  /* Estilo para el botón activo */
+  .accordion-button.is-active,
+  .accordion-button[aria-expanded="true"] {
+    background-color: black !important;
+    color: white !important;
+  }
+  
+  /* Mantener el hover solo para items no activos */
+  .accordion-button:not(.is-active):hover {
+    background-color: black;
+    color: white;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import NavBar from "../components/NavBar.astro";
+---
+
+<html lang="es">
+  <head>
+  <!-- Configuración básica -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Preconexiones y fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Metadatos SEO -->
+  <meta name="generator" content={Astro.generator} />
+  <title>Betcraft | Sublimación y Estampados Profesionales | Personalización Creativa</title>
+  <meta name="description" content="Personalización profesional: sublimación, estampados e impresiones de alta calidad. Transformamos tus ideas en productos únicos."/>
+  <link rel="canonical" href="https://betcraft.online/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://betcraft.online/" />
+  <meta property="og:title" content="Betcraft | Expertos en Personalización de Productos" />
+  <meta property="og:description" content="✨ Sublimación profesional con garantía de calidad." />
+  <meta property="og:image" content="https://betcraft.online/social/betcraft-servicios-sublimacion.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ejemplos de nuestros trabajos de sublimación en tazas, camisetas y más" />
+  <meta property="og:site_name" content="Betcraft" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Betcraft | Transformamos tus ideas en productos únicos" />
+  <meta name="twitter:description" content="Técnicas profesionales de estampado y sublimación. Materiales de primera calidad y diseños personalizados." />
+  <meta name="twitter:image" content="https://betcraft.online/social/betcraft-servicios-sublimacion.jpg" />
+</head>
+
+  <body>
+    <NavBar />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  import { gsap } from "gsap";
+</script>

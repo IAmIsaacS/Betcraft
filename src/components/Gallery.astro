@@ -1,0 +1,249 @@
+---
+import { Image } from "astro:assets";
+import img1 from '../assets/gallery/1.png';
+import img2 from '../assets/gallery/2.png';
+import img3 from '../assets/gallery/3.png';
+import img4 from '../assets/gallery/4.png';
+import img5 from '../assets/gallery/5.png';
+import img6 from '../assets/gallery/6.png';
+---
+
+<section id="galeria" class="w-[90%] md:w-[60%] mx-auto py-24 md:py-32 border-t border-gray-200" style="touch-action: pan-y;">
+  <h2 class="text-center text-xl md:text-2xl font-semibold uppercase tracking-wide mb-8">
+    Piezas con personalidad
+  </h2>
+  <div class="relative">
+    <!-- Contenedor único para todas las imágenes -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Items 1-6 con la misma estructura -->
+      <!-- Item 1 -->
+      <div class="group relative cursor-pointer overflow-hidden">
+        <p class="sr-only">Taza de cerámica blanca personalizada con un versículo bíblico inspirador, perfecta para regalos espirituales o uso personal.</p>
+        <Image
+          src={img1}
+          alt="Taza blanca de cerámica con versículo bíblico impreso en diseño elegante"
+          class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-60 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center px-4 text-center"
+          style="background: linear-gradient(to top, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.671));"
+        >
+          <p
+            class="text-white text-sm md:text-base font-semibold uppercase tracking-wide opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+          >
+            Sublimación
+          </p>
+        </div>
+        <p
+          class="text-center font-semibold uppercase tracking-wide md:hidden text-black bg-white border border-gray-200 p-[25px]"
+        >
+          Sublimación
+        </p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="group relative cursor-pointer overflow-hidden">
+        <p class="sr-only">Mouse pad personalizado con ilustración de gato sonriente, ideal para amantes de los felinos y oficinas con estilo.</p>
+        <Image
+          src={img2}
+          alt="Mouse pad rectangular con ilustración colorida de gato feliz y bigotes largos"
+          class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-60 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center px-4 text-center"
+          style="background: linear-gradient(to top, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.671));"
+        >
+          <p
+            class="text-white text-sm md:text-base font-semibold uppercase tracking-wide opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+          >
+            Sublimación
+          </p>
+        </div>
+        <p
+          class="text-center font-semibold uppercase tracking-wide md:hidden text-black bg-white border border-gray-200 p-[25px]"
+        >
+          Sublimación
+        </p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="group relative cursor-pointer overflow-hidden">
+        <p class="sr-only">Termo de acero inoxidable personalizado con nombre, perfecto para mantener bebidas frías o calientes durante horas.</p>
+        <Image
+          src={img3}
+          alt="Termo metálico con nombre 'Emilia' grabado en letras cursivas elegantes"
+          class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-60 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center px-4 text-center"
+          style="background: linear-gradient(to top, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.671));"
+        >
+          <p
+            class="text-white text-sm md:text-base font-semibold uppercase tracking-wide opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+          >
+            Sublimación
+          </p>
+        </div>
+        <p
+          class="text-center font-semibold uppercase tracking-wide md:hidden text-black bg-white border border-gray-200 p-[25px]"
+        >
+          Sublimación
+        </p>
+      </div>
+
+      <!-- Items 4-6 (ahora con la misma estructura) -->
+      <!-- Item 4 -->
+      <div class="group relative cursor-pointer overflow-hidden additional-item hidden">
+        <p class="sr-only">Camiseta azul marino con diseño minimalista, perfecta para expresar tu fe con estilo casual y moderno.</p>
+        <Image
+          src={img4}
+          alt="Camiseta azul oscuro con estampado blanco del nombre 'Jesús' en tipografía moderna"
+          class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-60 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center px-4 text-center"
+          style="background: linear-gradient(to top, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.671));"
+        >
+          <p class="text-white text-sm md:text-base font-semibold uppercase tracking-wide opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+            Estampado
+          </p>
+        </div>
+        <p class="text-center font-semibold uppercase tracking-wide md:hidden text-black bg-white border border-gray-200 p-[25px]">
+          Estampado
+        </p>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="group relative cursor-pointer overflow-hidden additional-item hidden">
+        <p class="sr-only">Set de franelas con diseños exclusivos, ideales para combinar o usar como colección de prendas únicas.</p>
+        <Image
+          src={img5}
+          alt="Tres franelas de algodón colgadas, mostrando diferentes diseños de estampados creativos"
+          class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-60 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center px-4 text-center"
+          style="background: linear-gradient(to top, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.671));"
+        >
+          <p class="text-white text-sm md:text-base font-semibold uppercase tracking-wide opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+            Estampado
+          </p>
+        </div>
+        <p class="text-center font-semibold uppercase tracking-wide md:hidden text-black bg-white border border-gray-200 p-[25px]">
+          Estampado
+        </p>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="group relative cursor-pointer overflow-hidden additional-item hidden">
+        <p class="sr-only">Taza con ilustración flotante, una pieza artística que combina funcionalidad con diseño innovador.</p>
+        <Image
+          src={img6}
+          alt="Taza blanca con ilustración surrealista de una figura femenina flotando sobre fondo azul"
+          class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-60 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center px-4 text-center"
+          style="background: linear-gradient(to top, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.671));"
+        >
+          <p class="text-white text-sm md:text-base font-semibold uppercase tracking-wide opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+            Sublimación
+          </p>
+        </div>
+        <p class="text-center font-semibold uppercase tracking-wide md:hidden text-black bg-white border border-gray-200 p-[25px]">
+          Sublimación
+        </p>
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <div id="botonContainer" class="text-center mt-8">
+      <button
+        id="verMasBtn"
+        class="px-8 py-4 border border-gray-900 text-gray-900 font-semibold uppercase tracking-wide hover:bg-gray-900 hover:text-white transition-none no-underline select-none cursor-pointer"
+      >
+        Ver más
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from "gsap";
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const verMasBtn = document.getElementById('verMasBtn');
+    const additionalItems = document.querySelectorAll('.additional-item');
+    const botonContainer = document.getElementById('botonContainer');
+
+    if (!verMasBtn || additionalItems.length === 0 || !botonContainer) return;
+
+    let visible = false;
+
+    // Ocultar inicialmente con GSAP para animación consistente
+    gsap.set(additionalItems, {
+      opacity: 0,
+      height: 0,
+      marginTop: 0,
+      marginBottom: 0,
+      paddingTop: 0,
+      paddingBottom: 0,
+      overflow: 'hidden'
+    });
+
+    verMasBtn.addEventListener('click', () => {
+      if (!visible) {
+        // Mostrar elementos
+        additionalItems.forEach(item => item.classList.remove('hidden'));
+        
+        // Animación de entrada
+        gsap.to(additionalItems, {
+          opacity: 1,
+          height: 'auto',
+          paddingTop: 0,
+          paddingBottom: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+          stagger: 0.1
+        });
+        
+        verMasBtn.textContent = 'Ver menos';
+      } else {
+        // Animación de salida (inversa de la entrada)
+        gsap.to(additionalItems, {
+          opacity: 0,
+          height: 0,
+          marginTop: 0,
+          marginBottom: 0,
+          paddingTop: 0,
+          paddingBottom: 0,
+          duration: 0.5,
+          ease: 'power2.in',
+          stagger: 0.1,
+          onComplete: () => {
+            additionalItems.forEach(item => item.classList.add('hidden'));
+          }
+        });
+        
+        verMasBtn.textContent = 'Ver más';
+      }
+      
+      visible = !visible;
+    });
+  });
+</script>
+
+
+<style>
+  /* Prevenir el arrastre de imágenes en móviles */
+  #galeria {
+    touch-action: manipulation;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+  
+  /* Opcional: mejorar la respuesta táctil */
+  #galeria .group {
+    -webkit-tap-highlight-color: transparent;
+  }
+</style>
