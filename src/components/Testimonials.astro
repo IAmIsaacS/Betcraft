@@ -1,0 +1,71 @@
+<section class="py-28 md:py-40">
+  <div class="max-w-[1320px] mx-auto px-6 md:px-10">
+    <div class="text-center mb-20">
+      <span class="label mb-5 block">Testimonios</span>
+      <h2 class="h1">Lo que dicen nuestros clientes</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="testimonials-grid">
+      <div class="testimonial-item bg-[var(--surface)] rounded-[var(--radius-xl)] p-10 md:p-12 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-all duration-[var(--duration-hover)] relative overflow-hidden cursor-default">
+        <div class="absolute top-8 right-10 font-display text-[120px] leading-none text-[var(--accent)]/[0.04] select-none">"</div>
+        <p class="font-display text-[22px] md:text-[26px] leading-[1.4] text-[var(--text)] mb-8 relative z-10 italic">
+          BetCraft transformó nuestra visión en productos que superaron cada expectativa. La calidad es excepcional y el servicio incomparable.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[var(--accent)] flex items-center justify-center group-hover:scale-110 transition-transform duration-[var(--duration-hover)]">
+            <span class="text-white font-semibold text-[16px]">M</span>
+          </div>
+          <div>
+            <p class="text-[15px] font-semibold text-[var(--text)]">María González</p>
+            <p class="body-md !text-[13px]">Directora de Marketing, TechBrand</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-item bg-[var(--surface)] rounded-[var(--radius-xl)] p-10 md:p-12 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-all duration-[var(--duration-hover)] relative overflow-hidden cursor-default">
+        <div class="absolute top-8 right-10 font-display text-[120px] leading-none text-[var(--accent)]/[0.04] select-none">"</div>
+        <p class="font-display text-[22px] md:text-[26px] leading-[1.4] text-[var(--text)] mb-8 relative z-10 italic">
+          Profesionales de otro nivel. Cada detalle cuenta y se nota en el resultado final. Son nuestro estudio de producción de confianza.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[var(--highlight)] flex items-center justify-center group-hover:scale-110 transition-transform duration-[var(--duration-hover)]">
+            <span class="text-white font-semibold text-[16px]">C</span>
+          </div>
+          <div>
+            <p class="text-[15px] font-semibold text-[var(--text)]">Carlos Mendoza</p>
+            <p class="body-md !text-[13px]">Fundador, CreativeLab</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ limitCallbacks: true });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = window.innerWidth < 768;
+    const items = document.querySelectorAll('.testimonial-item');
+
+    gsap.fromTo(items,
+      { y: isMobile ? 20 : 30, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '#testimonials-grid',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        stagger: isMobile ? 0.1 : 0.15,
+        ease: 'power3.out'
+      }
+    );
+  });
+</script>

@@ -1,13 +1,89 @@
-<section id="sobre-nosotros" class="w-[90%] md:w-[60%] mx-auto py-24 md:py-32 text-left border-t border-gray-200">
-  <div>
-    <h2 class="text-xl md:text-2xl font-semibold uppercase tracking-wide mb-8">
-      Sobre nosotros
-    </h2>
-    <p class="text-sm md:text-base font-light text-gray-700 leading-relaxed">
-      En Betcraft nos dedicamos a hacer realidad tus ideas a travéz de productos
-      personalizados que destacan por su calidad y creatividad.
-      Nuestra pasión es acompañarte en cada paso, desde la inspiración hasta el
-      producto final, garantizando un proceso ágil y confiable.
-    </p>
+<section id="sobre-nosotros" class="py-28 md:py-40">
+  <div class="max-w-[1320px] mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center">
+      <div id="about-left">
+        <span class="label mb-6 block">Sobre nosotros</span>
+        <h2 class="h1 mb-8">
+          Un estudio creativo donde la <span class="italic font-display">calidad</span> no es negociable
+        </h2>
+        <p class="body-lg mb-6">
+          BetCraft nació de la pasión por transformar ideas en productos físicos que cuentan historias. Cada pieza que producimos refleja nuestro compromiso con la excelencia, la creatividad y los detalles que marcan la diferencia.
+        </p>
+        <p class="body-lg">
+          No somos una imprenta más. Somos un estudio que entiende que cada marca merece una producción que eleve su percepción y comunique su verdadero valor.
+        </p>
+      </div>
+
+      <div id="about-right" class="relative">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="about-card bg-[var(--surface)] rounded-[var(--radius-lg)] p-7 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-all duration-[var(--duration-hover)] cursor-default">
+              <p class="font-display text-[clamp(20px,5vw,32px)] font-semibold text-[var(--accent)] mb-2 break-words">Precisión</p>
+              <p class="body-md break-words">Cada detalle cuenta. Producción impecable en cada proyecto.</p>
+            </div>
+            <div class="about-card bg-[var(--accent)] rounded-[var(--radius-lg)] p-7 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1 transition-all duration-[var(--duration-hover)] cursor-default">
+              <p class="font-display text-[clamp(20px,5vw,32px)] font-semibold text-white mb-2 break-words">Artesanía</p>
+              <p class="body-md !text-white/70 break-words">Artesanía moderna con tecnología de vanguardia.</p>
+            </div>
+          </div>
+          <div class="space-y-4 mt-8">
+            <div class="about-card bg-[var(--surface)] rounded-[var(--radius-lg)] p-7 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-all duration-[var(--duration-hover)] cursor-default">
+              <p class="font-display text-[clamp(20px,5vw,32px)] font-semibold text-[var(--highlight)] mb-2 break-words">Audacia</p>
+              <p class="body-md break-words">Diseños que se atreven a romper lo convencional.</p>
+            </div>
+            <div class="about-card bg-[var(--surface)] rounded-[var(--radius-lg)] p-7 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-all duration-[var(--duration-hover)] cursor-default">
+              <p class="font-display text-[clamp(20px,5vw,32px)] font-semibold text-[var(--accent)] mb-2 break-words">Confianza</p>
+              <p class="body-md break-words">Resultados consistentes que superan expectativas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ limitCallbacks: true });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = window.innerWidth < 768;
+    const left = document.getElementById('about-left');
+    const right = document.getElementById('about-right');
+
+    gsap.fromTo(left.querySelectorAll('span, h2, p'),
+      { y: isMobile ? 15 : 25, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: left,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out'
+      }
+    );
+
+    gsap.fromTo(right.querySelectorAll('div > div'),
+      { y: isMobile ? 20 : 30, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: right,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power3.out'
+      }
+    );
+  });
+</script>

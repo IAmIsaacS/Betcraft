@@ -2,51 +2,206 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import NavBar from "../components/NavBar.astro";
+import RGBMouseTrail from "../components/RGBMouseTrail.jsx";
+
+const siteUrl = "https://betcraft.online";
+const pageTitle = "BetCraft | Estudio Creativo de Producción Premium en Maracay";
+const pageDescription = "BetCraft es un estudio creativo de producción premium en Maracay, Venezuela. Sublimación, estampados, impresiones y regalos corporativos de alta calidad para marcas que destacan.";
+const ogImage = `${siteUrl}/social/betcraft-servicios-sublimacion.jpg`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BetCraft",
+  "url": siteUrl,
+  "logo": `${siteUrl}/favicon.png`,
+  "description": "Estudio creativo de producción premium. Sublimación, estampados, impresiones y regalos corporativos en Maracay, Venezuela.",
+  "foundingDate": "2020",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Maracay",
+    "addressRegion": "Aragua",
+    "addressCountry": "VE"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+58-424-2393338",
+    "contactType": "atención al cliente",
+    "availableLanguage": "Español"
+  },
+  "sameAs": [
+    "https://instagram.com/betcraft.ve",
+    "https://wa.me/04242393338"
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "BetCraft",
+  "image": ogImage,
+  "url": siteUrl,
+  "telephone": "+58-424-2393338",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Maracay",
+    "addressLocality": "Maracay",
+    "addressRegion": "Aragua",
+    "postalCode": "2101",
+    "addressCountry": "VE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 10.2353,
+    "longitude": -67.5931
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "priceRange": "$$"
+};
+
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Sublimación",
+    "provider": { "@type": "Organization", "name": "BetCraft" },
+    "description": "Sublimación de alta calidad en tazas, termos, mouse pads y artículos personalizados con colores vibrantes y duraderos.",
+    "areaServed": { "@type": "Country", "name": "Venezuela" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Estampados",
+    "provider": { "@type": "Organization", "name": "BetCraft" },
+    "description": "Estampados premium en prendas con identidad. Camisetas, franelas y textiles personalizados.",
+    "areaServed": { "@type": "Country", "name": "Venezuela" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Impresiones",
+    "provider": { "@type": "Organization", "name": "BetCraft" },
+    "description": "Impresiones nítidas en diversos materiales para tu marca o producto con alta resolución.",
+    "areaServed": { "@type": "Country", "name": "Venezuela" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Regalos Corporativos",
+    "provider": { "@type": "Organization", "name": "BetCraft" },
+    "description": "Productos únicos y personalizados que fortalecen relaciones y comunican tu marca efectivamente.",
+    "areaServed": { "@type": "Country", "name": "Venezuela" }
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Tienen un diseño listo para usar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "¡Perfecto! Transformamos tus diseños en productos únicos y de alta calidad. Solo envíanoslo y nosotros nos encargamos del resto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen garantía en sus productos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos garantía de satisfacción por 30 días en todos nuestros productos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo personalizar mi pedido?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claro, ofrecemos opciones completas de personalización. Contáctanos para discutir tu proyecto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los métodos de pago disponibles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aceptamos Pago Móvil, Efectivo, PayPal y transferencias bancarias."
+      }
+    }
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BetCraft",
+  "url": siteUrl,
+  "inLanguage": "es",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${siteUrl}/?s={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <html lang="es">
   <head>
-  <!-- Configuración básica -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Preconexiones y fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet" />
 
-  <!-- Metadatos SEO -->
-  <meta name="generator" content={Astro.generator} />
-  <title>Betcraft | Sublimación y Estampados Profesionales | Personalización Creativa</title>
-  <meta name="description" content="Personalización profesional: sublimación, estampados e impresiones de alta calidad. Transformamos tus ideas en productos únicos."/>
-  <link rel="canonical" href="https://betcraft.online/" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={siteUrl} />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://betcraft.online/" />
-  <meta property="og:title" content="Betcraft | Expertos en Personalización de Productos" />
-  <meta property="og:description" content="✨ Sublimación profesional con garantía de calidad." />
-  <meta property="og:image" content="https://betcraft.online/social/betcraft-servicios-sublimacion.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Ejemplos de nuestros trabajos de sublimación en tazas, camisetas y más" />
-  <meta property="og:site_name" content="Betcraft" />
-  <meta property="og:locale" content="es_ES" />
+    <link rel="alternate" hreflang="es" href={siteUrl} />
+    <link rel="alternate" hreflang="x-default" href={siteUrl} />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Betcraft | Transformamos tus ideas en productos únicos" />
-  <meta name="twitter:description" content="Técnicas profesionales de estampado y sublimación. Materiales de primera calidad y diseños personalizados." />
-  <meta name="twitter:image" content="https://betcraft.online/social/betcraft-servicios-sublimacion.jpg" />
-</head>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="BetCraft - Estudio creativo de producción premium en Maracay, Venezuela" />
+    <meta property="og:site_name" content="BetCraft" />
+    <meta property="og:locale" content="es_VE" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@betcraft.ve" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    {serviceSchemas.map(schema => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+  </head>
 
   <body>
+    <RGBMouseTrail client:load />
     <NavBar />
     <Header />
     <main>
@@ -55,7 +210,3 @@ import NavBar from "../components/NavBar.astro";
     <Footer />
   </body>
 </html>
-
-<script>
-  import { gsap } from "gsap";
-</script>

@@ -1,258 +1,97 @@
-<section id="faq" class="w-[90%] md:w-[60%] mx-auto py-24 md:py-32 border-t border-gray-200">
-  <h2 class="text-xl md:text-2xl font-semibold uppercase tracking-wide mb-12 text-center text-gray-800">
-    Preguntas Frecuentes
-  </h2>
-  
-  <div class="space-y-4" id="accordion">
-    <!-- Item 1 -->
-    <div class="border border-black overflow-hidden">
-      <button
-        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
-        aria-expanded="false"
-      >
-        ¿Tienes un diseño listo para usar?
-        <svg
-          class="w-5 h-5 transition-transform duration-300 accordion-icon"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div
-        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
-        role="region"
-      >
-        ¡Perfecto! transformamos tus ideas en productos únicos y de alta calidad. Si ya cuentas con un diseño propio, solo tienes que enviárnoslo y nosotros nos encargamos del resto.
+<section id="faq" class="py-28 md:py-40">
+  <div class="max-w-[1320px] mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-16 lg:gap-24 items-start">
+      <div id="faq-left">
+        <span class="label mb-5 block">FAQ</span>
+        <h2 class="h1 mb-6">Preguntas frecuentes</h2>
+        <p class="body-lg max-w-[400px]">
+          Resolvemos tus dudas sobre nuestros servicios de producción creativa.
+        </p>
       </div>
-    </div>
-    
-    <!-- Item 2 -->
-    <div class="border border-black overflow-hidden">
-      <button
-        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
-        aria-expanded="false"
-      >
-        ¿Ofrecen garantía en sus productos?
-        <svg
-          class="w-5 h-5 transition-transform duration-300 accordion-icon"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div
-        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
-        role="region"
-      >
-        Sí, ofrecemos garantía de satisfacción por 30 días en todos nuestros productos.
-      </div>
-    </div>
-    
-    <!-- Item 3 -->
-    <div class="border border-black overflow-hidden">
-      <button
-        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
-        aria-expanded="false"
-      >
-        ¿Puedo personalizar mi pedido?
-        <svg
-          class="w-5 h-5 transition-transform duration-300 accordion-icon"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div
-        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
-        role="region"
-      >
-        Claro, ofrecemos opciones de personalización de nuestros productos. Contáctanos para más detalles.
-      </div>
-    </div>
-    
-    <!-- Item 4 -->
-    <div class="border border-black overflow-hidden">
-      <button
-        class="w-full text-left px-6 py-4 font-semibold uppercase tracking-wide text-black bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none flex justify-between items-center accordion-button"
-        aria-expanded="false"
-      >
-        ¿Cuáles son los métodos de pago disponibles?
-        <svg
-          class="w-5 h-5 transition-transform duration-300 accordion-icon"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div
-        class="px-6 py-4 text-gray-700 font-light text-sm md:text-base accordion-content"
-        role="region"
-      >
-        Aceptamos Pago movíl, Efectivo, PayPal y transferencias bancarias.
+
+      <div class="flex flex-col gap-2" id="faq-list">
+        <div class="faq-item rounded-[var(--radius-md)] px-5 py-5 hover:bg-[var(--surface)] transition-all duration-[var(--duration-hover)] cursor-default">
+          <h3 class="text-[18px] font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--accent)] transition-colors duration-[var(--duration-hover)]">
+            ¿Tienen un diseño listo para usar?
+          </h3>
+          <p class="body-md leading-relaxed">
+            ¡Perfecto! Transformamos tus diseños en productos únicos y de alta calidad. Solo envíanoslo y nosotros nos encargamos del resto.
+          </p>
+        </div>
+
+        <div class="faq-item rounded-[var(--radius-md)] px-5 py-5 hover:bg-[var(--surface)] transition-all duration-[var(--duration-hover)] cursor-default">
+          <h3 class="text-[18px] font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--accent)] transition-colors duration-[var(--duration-hover)]">
+            ¿Ofrecen garantía en sus productos?
+          </h3>
+          <p class="body-md leading-relaxed">
+            Sí, ofrecemos garantía de satisfacción por 30 días en todos nuestros productos.
+          </p>
+        </div>
+
+        <div class="faq-item rounded-[var(--radius-md)] px-5 py-5 hover:bg-[var(--surface)] transition-all duration-[var(--duration-hover)] cursor-default">
+          <h3 class="text-[18px] font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--accent)] transition-colors duration-[var(--duration-hover)]">
+            ¿Puedo personalizar mi pedido?
+          </h3>
+          <p class="body-md leading-relaxed">
+            Claro, ofrecemos opciones completas de personalización. Contáctanos para discutir tu proyecto.
+          </p>
+        </div>
+
+        <div class="faq-item rounded-[var(--radius-md)] px-5 py-5 hover:bg-[var(--surface)] transition-all duration-[var(--duration-hover)] cursor-default">
+          <h3 class="text-[18px] font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--accent)] transition-colors duration-[var(--duration-hover)]">
+            ¿Cuáles son los métodos de pago disponibles?
+          </h3>
+          <p class="body-md leading-relaxed">
+            Aceptamos Pago Móvil, Efectivo, PayPal y transferencias bancarias.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-import { gsap } from 'gsap';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-class Accordion {
-  private accordionItems: NodeListOf<HTMLElement>;
-  private buttons: NodeListOf<HTMLButtonElement>;
-  private contents: NodeListOf<HTMLElement>;
-  private icons: NodeListOf<SVGElement>;
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ limitCallbacks: true });
 
-  constructor() {
-    this.accordionItems = document.querySelectorAll('#accordion > div');
-    this.buttons = document.querySelectorAll('.accordion-button');
-    this.contents = document.querySelectorAll('.accordion-content');
-    this.icons = document.querySelectorAll('.accordion-icon');
+  document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = window.innerWidth < 768;
+    const left = document.getElementById('faq-left');
+    const items = document.querySelectorAll('.faq-item');
 
-    this.init();
-  }
-
-  private init(): void {
-    // Inicializar: ocultar todos los contenidos
-    this.contents.forEach((content) => {
-      gsap.set(content, { 
-        height: 0,
-        opacity: 0,
-        paddingTop: 0,
-        paddingBottom: 0,
-        marginTop: 0,
-        marginBottom: 0
-      });
-    });
-
-    // Añadir event listeners
-    this.buttons.forEach((button, index) => {
-      button.addEventListener('click', () => this.toggleItem(index));
-    });
-  }
-
-  private toggleItem(index: number): void {
-    const isExpanded = this.buttons[index].getAttribute('aria-expanded') === 'true';
-    
-    if (isExpanded) {
-      this.closeItem(index);
-    } else {
-      this.openItem(index);
-      // Cerrar otros items abiertos
-      this.closeOtherItems(index);
-    }
-  }
-
-  private openItem(index: number): void {
-    const button = this.buttons[index];
-    const content = this.contents[index];
-    const icon = this.icons[index];
-    
-    // Aplicar estilo activo
-    button.classList.add('is-active');
-    button.classList.remove('hover:bg-black', 'hover:text-white');
-    button.classList.add('bg-black', 'text-white');
-
-    // Mostrar el contenido antes de la animación para calcular height
-    gsap.set(content, {
-      height: 'auto',
-      opacity: 1,
-      paddingTop: '1rem',
-      paddingBottom: '1rem',
-      marginTop: 0,
-      marginBottom: 0
-    });
-    
-    gsap.from(content, {
-      height: 0,
-      opacity: 0,
-      paddingTop: 0,
-      paddingBottom: 0,
-      duration: 0.3,
-      ease: 'power2.inOut'
-    });
-
-    // Animación del icono
-    gsap.to(icon, {
-      rotation: 180,
-      duration: 0.3,
-      ease: 'power2.inOut'
-    });
-
-    button.setAttribute('aria-expanded', 'true');
-  }
-
-  private closeItem(index: number): void {
-    const button = this.buttons[index];
-    const content = this.contents[index];
-    const icon = this.icons[index];
-    
-    // Quitar estilo activo
-    button.classList.remove('is-active', 'bg-black', 'text-white');
-    button.classList.add('hover:bg-black', 'hover:text-white');
-    
-    gsap.to(content, {
-      height: 0,
-      opacity: 0,
-      paddingTop: 0,
-      paddingBottom: 0,
-      duration: 0.3,
-      ease: 'power2.inOut'
-    });
-
-    // Animación del icono
-    gsap.to(icon, {
-      rotation: 0,
-      duration: 0.3,
-      ease: 'power2.inOut'
-    });
-
-    button.setAttribute('aria-expanded', 'false');
-  }
-
-  private closeOtherItems(openIndex: number): void {
-    this.contents.forEach((content, index) => {
-      if (index !== openIndex && this.buttons[index].getAttribute('aria-expanded') === 'true') {
-        this.closeItem(index);
+    gsap.fromTo(left.querySelectorAll('span, h2, p'),
+      { y: isMobile ? 12 : 20, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: left,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out'
       }
-    });
-  }
-}
+    );
 
-// Inicializar el acordeón cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-  new Accordion();
-});
+    gsap.fromTo(items,
+      { y: isMobile ? 12 : 20, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '#faq-list',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: isMobile ? 0.06 : 0.08,
+        ease: 'power3.out'
+      }
+    );
+  });
 </script>
-
-<style>
-  .accordion-icon {
-    transition: transform 0.3s ease;
-    transform-origin: center;
-  }
-  
-  /* Estilo para el botón activo */
-  .accordion-button.is-active,
-  .accordion-button[aria-expanded="true"] {
-    background-color: black !important;
-    color: white !important;
-  }
-  
-  /* Mantener el hover solo para items no activos */
-  .accordion-button:not(.is-active):hover {
-    background-color: black;
-    color: white;
-  }
-</style>

@@ -1,0 +1,75 @@
+<section id="proceso" class="py-28 md:py-40 bg-[var(--surface)]">
+  <div class="max-w-[1320px] mx-auto px-6 md:px-10">
+    <div class="text-center mb-20">
+      <span class="label mb-5 block">Proceso</span>
+      <h2 class="h1 max-w-[600px] mx-auto">De la idea al producto final con precisión</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6" id="process-steps">
+      <div class="process-step group relative bg-[var(--surface)] rounded-[var(--radius-lg)] p-6 border border-[rgba(17,17,17,0.06)] hover:border-[var(--highlight)]/20 hover:shadow-[var(--shadow-soft)] transition-all duration-[var(--duration-hover)] cursor-default">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-display text-[48px] font-semibold text-[var(--accent)]/10 group-hover:text-[var(--highlight)]/20 transition-colors duration-[var(--duration-hover)]">01</span>
+          <div class="w-12 h-[1px] bg-[var(--highlight)] group-hover:w-16 transition-all duration-[var(--duration-hover)]"></div>
+        </div>
+        <h3 class="text-[20px] font-semibold text-[var(--text)] mb-3 group-hover:text-[var(--highlight)] transition-colors duration-[var(--duration-hover)]">Concepto</h3>
+        <p class="body-md break-words">Escuchamos tu visión y la transformamos en un concepto claro y ejecutable.</p>
+      </div>
+
+      <div class="process-step group relative bg-[var(--surface)] rounded-[var(--radius-lg)] p-6 border border-[rgba(17,17,17,0.06)] hover:border-[var(--highlight)]/20 hover:shadow-[var(--shadow-soft)] transition-all duration-[var(--duration-hover)] cursor-default">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-display text-[48px] font-semibold text-[var(--accent)]/10 group-hover:text-[var(--highlight)]/20 transition-colors duration-[var(--duration-hover)]">02</span>
+          <div class="w-12 h-[1px] bg-[var(--highlight)] group-hover:w-16 transition-all duration-[var(--duration-hover)]"></div>
+        </div>
+        <h3 class="text-[20px] font-semibold text-[var(--text)] mb-3 group-hover:text-[var(--highlight)] transition-colors duration-[var(--duration-hover)]">Diseño</h3>
+        <p class="body-md break-words">Creamos diseños que elevan la percepción de tu marca con acabados premium.</p>
+      </div>
+
+      <div class="process-step group relative bg-[var(--surface)] rounded-[var(--radius-lg)] p-6 border border-[rgba(17,17,17,0.06)] hover:border-[var(--highlight)]/20 hover:shadow-[var(--shadow-soft)] transition-all duration-[var(--duration-hover)] cursor-default">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-display text-[48px] font-semibold text-[var(--accent)]/10 group-hover:text-[var(--highlight)]/20 transition-colors duration-[var(--duration-hover)]">03</span>
+          <div class="w-12 h-[1px] bg-[var(--highlight)] group-hover:w-16 transition-all duration-[var(--duration-hover)]"></div>
+        </div>
+        <h3 class="text-[20px] font-semibold text-[var(--text)] mb-3 group-hover:text-[var(--highlight)] transition-colors duration-[var(--duration-hover)]">Producción</h3>
+        <p class="body-md break-words">Tecnología de vanguardia para resultados impecables en cada pieza.</p>
+      </div>
+
+      <div class="process-step group relative bg-[var(--surface)] rounded-[var(--radius-lg)] p-6 border border-[rgba(17,17,17,0.06)] hover:border-[var(--highlight)]/20 hover:shadow-[var(--shadow-soft)] transition-all duration-[var(--duration-hover)] cursor-default">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-display text-[48px] font-semibold text-[var(--accent)]/10 group-hover:text-[var(--highlight)]/20 transition-colors duration-[var(--duration-hover)]">04</span>
+          <div class="w-12 h-[1px] bg-[var(--highlight)] group-hover:w-16 transition-all duration-[var(--duration-hover)]"></div>
+        </div>
+        <h3 class="text-[20px] font-semibold text-[var(--text)] mb-3 group-hover:text-[var(--highlight)] transition-colors duration-[var(--duration-hover)]">Entrega</h3>
+        <p class="body-md break-words">Tu producto llega con la calidad prometida, listo para impactar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ limitCallbacks: true });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = window.innerWidth < 768;
+    const steps = document.querySelectorAll('.process-step');
+
+    gsap.fromTo(steps,
+      { y: isMobile ? 20 : 30, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '#process-steps',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: isMobile ? 0.08 : 0.12,
+        ease: 'power3.out'
+      }
+    );
+  });
+</script>
